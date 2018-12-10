@@ -13,6 +13,11 @@ And run the command bellow to sourced the file.
 source .bashrc
 ```
 
+To test the cross compiler run the command bellow and check the version installed.
+```
+gcc --version
+```
+
 
 ## BeagleBone
 - [Compilations](https://github.com/thalestas/boot-and-compile-process/blob/master/beaglebone/bb_compilations.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox compilations.
