@@ -17,7 +17,15 @@ To test the cross compiler run the command bellow and check the version installe
 ```
 gcc --version
 ```
+It is necessary to install the following dependencies too:
+```
+sudo apt-get install bison flex libssl-dev
+```
+
 
 
 ## BeagleBone
 - [Compilations](https://github.com/thalestas/boot-and-compile-process/blob/master/beaglebone/bb_compilations.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox compilations.
+
+## Raspberry Pi
+- [Compilations](https://github.com/thalestas/boot-and-compile-process/tree/master/raspberr) - Describe Raspbeery Pi U-boot, Linux Kernel and BusyBox compilations.
