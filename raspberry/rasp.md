@@ -29,11 +29,13 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs -j$(nproc)
 The -j$(nproc) command will use all core of your computer to compile. If you would like to use less, change $(nproc) to the number of cores.
 
 ## How to prepare the SD Card
-The following files are necessary to boot the Raspberry Pi.
+The following files are necessary to boot the Raspberry Pi. They are GPU firmware and bootloader
 * bootcode.bin
 * start.elf
 * fixup.dat
-* config.txt
 
 You can download these file from [https://github.com/raspberrypi/firmware/tree/master/boot](https://github.com/raspberrypi/firmware/tree/master/boot)
 
+You also need *config.txt* file (Contents system configuration parameters) and *cmdline.txt* file (Arguments to Linux Kernel) to boot properly.
+
+These files can be downloaded **here** (jaja nos adiciona :))
