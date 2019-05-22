@@ -36,7 +36,6 @@ sudo apt-get install bison flex libssl-dev
 1. Clone the source code of u-boot.
 ```
 git clone https://github.com/u-boot/u-boot
-```
 
 # Raspberry PI Compilations
 ## Linux Kernel
