@@ -25,7 +25,15 @@ sudo apt-get install bison flex libssl-dev
 
 
 ## BeagleBone
-- [Compilations](https://github.com/thalestas/boot-and-compile-process/blob/master/beaglebone/bb.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox compilations.
+- [Compilations](#beaglebone_compilations) - Describe BeagleBone U-boot, Linux Kernel and BusyBox compilations.
 
 ## Raspberry Pi
 - [Compilations](https://github.com/thalestas/boot-and-compile-process/blob/master/raspberry/rasp.md) - Describe Raspbeery Pi U-boot, Linux Kernel and BusyBox compilations.
+
+# BeagleBone Compilations
+
+## U-boot
+1. Clone the source code of u-boot.
+```
+git clone https://github.com/u-boot/u-boot
+
