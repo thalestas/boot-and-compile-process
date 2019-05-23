@@ -40,7 +40,7 @@ git clone https://github.com/u-boot/u-boot
 
 # Raspberry PI Compilations
 ## Linux Kernel
-The first thig that is necessary is Clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
+The first thig that is necessary is clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
 ```
 git clone https://github.com/raspberrypi/linux
 ```
@@ -62,7 +62,7 @@ For Pi 2, Pi 3 and Pi 3+:
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
 ```
 
-Than, to build use the following command:
+Then, to build use the following command:
 ```
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs -j$(nproc)
 ```
