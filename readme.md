@@ -78,6 +78,4 @@ You can download these file from [https://github.com/raspberrypi/firmware/tree/m
 
 You also need *config.txt* file (Contents system configuration parameters) and *cmdline.txt* file (Arguments to Linux Kernel) to boot properly.
 
-These files can be downloaded **here** (jaja nos adiciona :))
-
-
+These files can be downloaded [here](https://github.com/thalestas/boot-and-compile-process/tree/master/raspberry). The *config.txt* provide only contains a configuration to enable UART but it is enough to work.
