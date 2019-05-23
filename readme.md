@@ -40,12 +40,12 @@ git clone https://github.com/u-boot/u-boot
 
 # Raspberry PI Compilations
 ## Linux Kernel
-Clone this [git](https://github.com/raspberrypi/linux).
+The first thig that is necessary is Clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
 ```
 git clone https://github.com/raspberrypi/linux
 ```
 
-To initiate the compile process, it good idea to clean the previous configs if its exists. This can be done by the following command:
+To initiate the compile process, it is a good idea to clean the previous configs if its exists. This can be done by the following command:
 ```
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
 ```
@@ -69,7 +69,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs -j$(nproc)
 The -j$(nproc) command will use all core of your computer to compile. If you would like to use less, change $(nproc) to the number of cores.
 
 ## How to prepare the SD Card
-The following files are necessary to boot the Raspberry Pi. They are GPU firmware and bootloader
+The following files are necessary to boot the Raspberry Pi. They are GPU firmware and bootloader. They are alrey provide by Raspberry Org.
 * bootcode.bin
 * start.elf
 * fixup.dat
