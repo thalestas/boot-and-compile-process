@@ -39,6 +39,12 @@ git clone https://github.com/u-boot/u-boot
 ```
 
 # Raspberry PI Compilations
+
+## U-boot
+First thing that you need is get u-boot source code. You can get cloning this [git](https://github.com/u-boot/u-boot)
+
+
+
 ## Linux Kernel
 The first thig that is necessary is clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
 ```
