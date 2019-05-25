@@ -53,7 +53,10 @@ make rpi_0_w_defconfig
 ```
 make rpi_3_32b_defconfig
 ```
-
+So, compile using cross_compile:
+```
+make CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc)
+```
 
 ## Linux Kernel
 The first thig that is necessary is clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
