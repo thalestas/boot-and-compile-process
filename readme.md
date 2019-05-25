@@ -41,8 +41,18 @@ git clone https://github.com/u-boot/u-boot
 # Raspberry PI Compilations
 
 ## U-boot
-First thing that you need is get u-boot source code. You can get cloning this [git](https://github.com/u-boot/u-boot)
+First thing that you need is get u-boot source code. You can get cloning this [git](https://github.com/u-boot/u-boot).
 
+After that, configure and compile u-boot to raspberry using respectively:
+
+1. Raspberry Pi Zero W
+```
+make rpi_0_w_defconfig
+```
+2. Raspberry Pi 3
+```
+make rpi_3_32b_defconfig
+```
 
 
 ## Linux Kernel
