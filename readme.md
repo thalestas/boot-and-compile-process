@@ -58,6 +58,19 @@ So, compile using cross_compile:
 make CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc)
 ```
 
+To boot kernel properly using u-boot, it is necessary create a file with boot arguments as following.
+```
+mmc dev 0
+fatload mmc 0:1 ${kernel_addr_r} zImage
+fatload mmc 0:1 0x2000000 bcm2708-rpi-0-w.dtb
+setenv bootargs 8250.nr_uarts=1 root=/dev/mmcblk0p2 rootwait console=ttyS0,115200
+bootz ${kernel_addr_r} - 0x2000000
+```
+You can named as *boot.cmd*. But, u-boot only read *.scr* file. To create this file, run the following commad to use a mkimage from u-boot.
+```
+tools/mkimage -C none -A arm -T script -d boot.cmd boot.scr
+```
+
 ## Linux Kernel
 The first thig that is necessary is clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
 ```
