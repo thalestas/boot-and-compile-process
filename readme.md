@@ -12,7 +12,6 @@ And run the command bellow to source the file.
 ```
 source .bashrc
 ```
-
 To test the cross compiler run the command bellow and check the version installed.
 ```
 gcc --version
@@ -25,12 +24,12 @@ sudo apt-get install bison flex libssl-dev
 
 
 ## BeagleBone
-- [Compilations](#beaglebone-compilations) - Describe BeagleBone U-boot, Linux Kernel and BusyBox compilations.
+- [Build](#beaglebone-builds) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
 
 ## Raspberry Pi
-- [Compilations](#raspberry-pi-compilations) - Describe Raspbeery Pi U-boot, Linux Kernel and BusyBox compilations.
+- [Build](#raspberry-pi-builds) - Describe Raspbeery Pi U-boot, Linux Kernel and BusyBox Builds.
 
-# BeagleBone Compilations
+# BeagleBone Builds
 
 ## U-boot
 1. Clone the source code of u-boot.
@@ -38,10 +37,10 @@ sudo apt-get install bison flex libssl-dev
 git clone https://github.com/u-boot/u-boot
 ```
 
-# Raspberry PI Compilations
+# Raspberry PI Builds
 
 ## U-boot
-First thing that you need is get u-boot source code. You can get cloning this [git](https://github.com/u-boot/u-boot).
+First step that you need is get u-boot source code. You can get clone this [git](https://github.com/u-boot/u-boot).
 
 After that, configure and compile u-boot to raspberry using respectively:
 
@@ -53,7 +52,7 @@ make rpi_0_w_defconfig
 ```
 make rpi_3_32b_defconfig
 ```
-So, compile using cross_compile:
+So, compile using cross compile:
 ```
 make CROSS_COMPILE=arm-linux-gnueabihf- -j$(nproc)
 ```
@@ -62,7 +61,7 @@ To boot kernel properly using u-boot, it is necessary create a file with boot ar
 ```
 mmc dev 0
 fatload mmc 0:1 ${kernel_addr_r} zImage
-fatload mmc 0:1 0x2000000 bcm2708-rpi-0-w.dtb
+fatload mmc 0:1 0x2000000 bcm2835-rpi-zero-w.dtb
 setenv bootargs 8250.nr_uarts=1 root=/dev/mmcblk0p2 rootwait console=ttyS0,115200
 bootz ${kernel_addr_r} - 0x2000000
 ```
@@ -70,6 +69,9 @@ You can named as *boot.cmd*. But, u-boot only read *.scr* file. To create this f
 ```
 tools/mkimage -C none -A arm -T script -d boot.cmd boot.scr
 ```
+
+**Note** Even if you pass *bcm2835-rpi-zero-w.dtb* on bootloader, you need include the *bcm2708-rpi-zero-w.dtb* on boot partition. 
+This device tree blob is used by Raspberry pi to configure uart. If you don't include, you not be able to see U-boot serial output
 
 ## Linux Kernel
 The first thig that is necessary is clone this [git](https://github.com/raspberrypi/linux) to get Linux Kernel source code for Raspberry Pi.
@@ -84,16 +86,10 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
 
 Run the following command to create .config file. That file will set the build configurations.
 
-For Pi 1, Pi Zero and Pi Zero W:
+Pi Zero W:
 ```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2835_defconfig
 ```
-
-For Pi 2, Pi 3 and Pi 3+:
-```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
-```
-
 Then, to build use the following command:
 ```
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs -j$(nproc)
@@ -101,12 +97,18 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs -j$(nproc)
 The -j$(nproc) command will use all core of your computer to compile. If you would like to use less, change $(nproc) to the number of cores.
 
 ## How to prepare the SD Card
-The following files are necessary to boot the Raspberry Pi. They are GPU firmware and bootloader. They are alrey provide by Raspberry Org.
+The following files are necessary to boot the Raspberry Pi. They are GPU firmware and bootloader. 
 * bootcode.bin
 * start.elf
 * fixup.dat
 
 You can download these file from [https://github.com/raspberrypi/firmware/tree/master/boot](https://github.com/raspberrypi/firmware/tree/master/boot)
+
+```
+wget https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin
+wget https://github.com/raspberrypi/firmware/raw/master/boot/start.elf
+wget https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat
+```
 
 You also need *config.txt* file (Contents system configuration parameters) and *cmdline.txt* file (Arguments to Linux Kernel) to boot properly.
 
