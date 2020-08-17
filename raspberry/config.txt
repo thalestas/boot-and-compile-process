@@ -4,3 +4,5 @@ kernel=u-boot.bin
 #Enable UART
 enable_uart=1
 
+#Enable USB Ethernet
+dtoverlay=dwc2

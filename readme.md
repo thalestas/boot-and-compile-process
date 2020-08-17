@@ -113,3 +113,11 @@ wget https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat
 You also need *config.txt* file (Contents system configuration parameters) and *cmdline.txt* file (Arguments to Linux Kernel) to boot properly.
 
 These files can be downloaded [here](https://github.com/thalestas/boot-and-compile-process/tree/master/raspberry). The *config.txt* provide only contains a configuration to enable UART but it is enough to work.
+
+## Configure TFTP over usb
+
+Configure the Raspberry Pi's Bootloader to enable USB Gadget.
+
+Add on the bottom of *config.txt* file ``dtoverlay=dwc2``.
+
+In the *cmdline.txt*, add ``modules-load=dwc2,g_ether`` after ``rootwait``.
