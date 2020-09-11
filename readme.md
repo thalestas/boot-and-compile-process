@@ -20,14 +20,14 @@ It is necessary to install the following dependencies too:
 ```
 sudo apt-get install bison flex libssl-dev
 ```
-
-
-
 ## BeagleBone
 - [Build](#beaglebone-builds) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
 
 ## Raspberry Pi
-- [Build](#raspberry-pi-builds) - Describe Raspbeery Pi U-boot, Linux Kernel and BusyBox Builds.
+- [Build](#raspberry-pi-builds) - Describe Raspberry Pi U-boot, Linux Kernel and BusyBox Builds.
+
+## DragonBoard 410c
+- [Build](#d410c-builds) - Describe DragonBoard 410c U-boot, Linux Kernel and BusyBox Builds.
 
 # BeagleBone Builds
 
@@ -121,3 +121,5 @@ Configure the Raspberry Pi's Bootloader to enable USB Gadget.
 Add on the bottom of *config.txt* file ``dtoverlay=dwc2``.
 
 In the *cmdline.txt*, add ``modules-load=dwc2,g_ether`` after ``rootwait``.
+
+# DragonBoard 410c Builds
