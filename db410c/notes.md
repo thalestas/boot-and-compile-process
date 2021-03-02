@@ -1,3 +1,14 @@
+## Compile db410c Android Kernel
+Kernel Repo: https://git.linaro.org/people/amit.pundir/linux.git  
+Branch: db410c-android-mainline-tracking  
+Steps: 
+```
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- distclean
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- db410c_defconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
+```
+
 ## ADS1115 Device Driver
 1- Include ADS1115 Device Tree node:  
 
