@@ -12,6 +12,10 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- db410c_defconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
 ```
+Merge Kernel Image and dtb:
+```
+cat arch/arm64/boot/Image.gz arch/arm64/boot/dts/qcom/apq8016-sbc.dtb > db410c-pacudragon.gz-dtb
+```
 
 ## ADS1115 Device Driver
 1- Include ADS1115 Device Tree node:  
