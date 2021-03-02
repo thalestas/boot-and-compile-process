@@ -1,6 +1,10 @@
 ## Compile db410c Android Kernel
 Kernel Repo: https://git.linaro.org/people/amit.pundir/linux.git  
 Branch: db410c-android-mainline-tracking  
+Install toolchain: 
+```
+sudo apt install gcc-aarch64-linux-gnu
+```
 Steps: 
 ```
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- distclean
