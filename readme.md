@@ -21,7 +21,7 @@ It is necessary to install the following dependencies too:
 sudo apt-get install bison flex libssl-dev
 ```
 ## BeagleBone
-- [Build](BBB/readme.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
+- [Build](beaglebone/readme.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
 
 ## Raspberry Pi
 - [Build](raspberry/readme.md) - Describe Raspberry Pi U-boot, Linux Kernel and BusyBox Builds.
