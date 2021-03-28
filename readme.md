@@ -21,21 +21,10 @@ It is necessary to install the following dependencies too:
 sudo apt-get install bison flex libssl-dev
 ```
 ## BeagleBone
-- [Build](#beaglebone-builds) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
+- [Build](BBB/readme.md) - Describe BeagleBone U-boot, Linux Kernel and BusyBox Builds.
 
 ## Raspberry Pi
 - [Build](raspberry/readme.md) - Describe Raspberry Pi U-boot, Linux Kernel and BusyBox Builds.
 
 ## DragonBoard 410c
 - [Build](#d410c-builds) - Describe DragonBoard 410c U-boot, Linux Kernel and BusyBox Builds.
-
-# BeagleBone Builds
-
-## U-boot
-1. Clone the source code of u-boot.
-```
-git clone https://github.com/u-boot/u-boot
-```
-
-
-# DragonBoard 410c Builds
